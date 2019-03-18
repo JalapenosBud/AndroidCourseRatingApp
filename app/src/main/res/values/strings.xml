@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CourseApp</string>
+    <string name="below_50">below 50</string>
+    <string name="_100">100</string>
+    <string name="_90">90</string>
+    <string name="_80">80</string>
+    <string name="_70">70</string>
+    <string name="_60">60</string>
+    <string name="_50">50</string>
+    <string name="question">question</string>
+    <string name="next">Next</string>
+    <string name="faisal">Faisal</string>
+    <string name="oskar">Oskar</string>
+    <string name="david">David</string>
+</resources>
