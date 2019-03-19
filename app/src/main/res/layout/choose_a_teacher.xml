@@ -6,7 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager"
+        app:layout_constraintEnd_toStartOf="@+id/teacher_buttons_layout"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toEndOf="@+id/teacher_buttons_layout"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_buttons_layout"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <LinearLayout
+        android:id="@+id/teacher_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="586dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496">
+
+        <Button
+            android:id="@+id/button_faisal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/faisal" />
+
+        <Button
+            android:id="@+id/button_oskar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/oskar" />
+
+        <Button
+            android:id="@+id/button_david"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/david" />
+
+    </LinearLayout>
+
     <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="8dp"
@@ -26,31 +71,13 @@
 
     <LinearLayout
         android:layout_width="395dp"
-        android:layout_height="628dp"
+        android:layout_height="796dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question_box">
-
-        <Button
-            android:id="@+id/button_faisal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/faisal" />
-
-        <Button
-            android:id="@+id/button_oskar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/oskar" />
-
-        <Button
-            android:id="@+id/button_david"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/david" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/container"

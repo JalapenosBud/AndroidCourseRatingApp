@@ -13,4 +13,8 @@
     <string name="oskar">Oskar</string>
     <string name="david">David</string>
     <string name="submit">Submit</string>
+    <string name="android_app">Android App</string>
+    <string name="intro_to_quantum_computing">Intro to quantum computing</string>
+    <string name="relativity_theory">Relativity theory</string>
+    <string name="intro_to_energy_over_matter">Intro to energy over matter</string>
 </resources>

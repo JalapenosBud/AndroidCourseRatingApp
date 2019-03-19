@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -34,10 +35,13 @@ public class MainActivity extends FragmentActivity {
 
         RadioGroup radioGroup = null;
 
+        LinearLayout teacher_buttons_layout = findViewById(R.id.teacher_buttons_layout);
 
         button_faisal.setOnClickListener((view -> {
-
-            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+            teacher_buttons_layout.setEnabled(false);
+            teacher_buttons_layout.setVisibility(View.INVISIBLE);
+            setContentView(R.layout.course_layout);
+            //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
         }));
 
@@ -48,27 +52,6 @@ public class MainActivity extends FragmentActivity {
         button_david.setOnClickListener((view -> {
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         }));
-       // System.out.println(radioGroup.getFocusedChild());
-
-        // submit_button.setOnClickListener((view -> {
-        //
-        //      System.out.println(radioGroup.getFocusedChild());
-
-        // }));
-
-        pager.setOnTouchListener(new View.OnTouchListener(){
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-
-                return false;
-            }
-        });
-        {
-
-        }
 
     }
-
-
 }
