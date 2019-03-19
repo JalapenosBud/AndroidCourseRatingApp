@@ -8,22 +8,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class FirstFragment extends Fragment {
 
+    public static ArrayList<RadioButton> radioButtons = new ArrayList<>();
+
+    public static RadioGroup radioGroup;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        RadioGroup radioGroup = getView().findViewById(R.id.radioGroup);
+        radioGroup = getView().findViewById(R.id.radioGroup);
+
+
 
         if(radioGroup != null)
         {
@@ -32,12 +39,15 @@ public class FirstFragment extends Fragment {
 
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    for (int i = 0; i < group.getChildCount(); i++)
-                    {
-                        if (checkedId == group.getChildAt(i).getId())
-                        {
-                            Log.d("hi", i + " is checked");
-                        }
+                    if(radioGroup != null) {
+                        int count = radioGroup.getChildCount();
+
+                            View o = radioGroup.getChildAt(checkedId);
+                            if(o instanceof RadioButton)
+                            {
+                                radioButtons.add((RadioButton)o);
+                            }
+
                     }
 
                 }

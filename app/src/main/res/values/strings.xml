@@ -17,4 +17,6 @@
     <string name="intro_to_quantum_computing">Intro to quantum computing</string>
     <string name="relativity_theory">Relativity theory</string>
     <string name="intro_to_energy_over_matter">Intro to energy over matter</string>
+    <string name="choose_a_course_to_rate">Choose a course to rate</string>
+    <string name="back">Back</string>
 </resources>

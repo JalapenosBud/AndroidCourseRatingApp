@@ -1,6 +1,7 @@
 package com.example.courseapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +27,7 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.choose_a_teacher);
 
        // Button submit_button = (Button)findViewById(R.id.submit_button);
-        ViewPager pager = (ViewPager) findViewById(R.id.container);
+
 
         Button button_faisal = (Button) findViewById(R.id.button_faisal);
         Button button_oskar = (Button) findViewById(R.id.button_oskar);
@@ -40,17 +41,22 @@ public class MainActivity extends FragmentActivity {
         button_faisal.setOnClickListener((view -> {
             teacher_buttons_layout.setEnabled(false);
             teacher_buttons_layout.setVisibility(View.INVISIBLE);
-            setContentView(R.layout.course_layout);
+
+            Intent intent = new Intent(this, CourseActivity.class);
+
+            startActivity(intent);
+
+            //setContentView(R.layout.course_layout);
             //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
         }));
 
         button_oskar.setOnClickListener((view -> {
-            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+            //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         }));
 
         button_david.setOnClickListener((view -> {
-            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+            //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         }));
 
     }
