@@ -3,6 +3,7 @@ package com.example.courseapp;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.MotionEvent;
 
 class MyPagerAdapter extends FragmentPagerAdapter {
 
