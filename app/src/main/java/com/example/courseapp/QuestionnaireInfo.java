@@ -3,15 +3,23 @@ package com.example.courseapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 public class QuestionnaireInfo implements Parcelable {
 
     public String[] teacher_names = {"Faisal","Oskar", "David"};
 
-    public QuestionnareRating[] questionnareRatings = new QuestionnareRating[6];
+    public static ArrayList<QuestionnaireInfo> QRs = new ArrayList<>();
 
+    String questionnareRating;
 
     protected QuestionnaireInfo(Parcel in) {
         teacher_names = in.createStringArray();
+    }
+
+    public QuestionnaireInfo(String questionnareRating)
+    {
+        this.questionnareRating = questionnareRating;
     }
 
     public static final Creator<QuestionnaireInfo> CREATOR = new Creator<QuestionnaireInfo>() {

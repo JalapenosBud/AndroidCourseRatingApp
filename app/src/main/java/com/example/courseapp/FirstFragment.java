@@ -3,6 +3,7 @@ package com.example.courseapp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment{
 
     public static ArrayList<RadioButton> radioButtons = new ArrayList<>();
 
@@ -74,18 +75,13 @@ public class FirstFragment extends Fragment {
             {
                 ((RadioButton) b7).setText("" + QuestionnareRating.G.rate);
             }
-        }
-
-
-        if(radioGroup != null)
-        {
 
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
 
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                    View o = group.getChildAt(checkedId);
+                    View o = group.findViewById(checkedId);
 
                     if(o instanceof RadioButton)
                     {
@@ -116,4 +112,6 @@ public class FirstFragment extends Fragment {
 
         return f;
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.example.courseapp;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 
 class MyPagerAdapter extends FragmentPagerAdapter {
@@ -24,6 +25,8 @@ class MyPagerAdapter extends FragmentPagerAdapter {
             default: return FirstFragment.newInstance("ThirdFragment, Default");
         }
     }
+
+
 
     @Override
     public int getCount() {
