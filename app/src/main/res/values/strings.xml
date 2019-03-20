@@ -7,7 +7,13 @@
     <string name="_70">70</string>
     <string name="_60">60</string>
     <string name="_50">50</string>
-    <string name="question">question</string>
+    <string name="question1">Rate the revelancy of the subject from 1 to 100</string>
+    <string name="question2">Rate the teacher\'s overall performance from 1 to 100</string>
+    <string name="question3">Rate the teacher\'s preparation from 1 to 100</string>
+    <string name="question4">Rate the teacher\'s feedback from 1 to 100</string>
+    <string name="question5">Rate the teacher\'s examp1es from 1 to 100</string>
+    <string name="question6">Rate your job opportunities from 1 to 100</string>
+
     <string name="next">Next</string>
     <string name="faisal">Faisal</string>
     <string name="oskar">Oskar</string>

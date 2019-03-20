@@ -13,13 +13,16 @@ public class QuestionnaireInfo implements Parcelable {
 
     String questionnareRating;
 
+    String questionnare_text_box_question;
+
     protected QuestionnaireInfo(Parcel in) {
         teacher_names = in.createStringArray();
     }
 
-    public QuestionnaireInfo(String questionnareRating)
+    public QuestionnaireInfo(String questionnareRating, String questionnare_text_box_question)
     {
         this.questionnareRating = questionnareRating;
+        this.questionnare_text_box_question = questionnare_text_box_question;
     }
 
     public static final Creator<QuestionnaireInfo> CREATOR = new Creator<QuestionnaireInfo>() {

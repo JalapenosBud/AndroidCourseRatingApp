@@ -20,6 +20,8 @@ import static com.example.courseapp.FirstFragment.radioGroup;
 
 public class CourseActivity extends FragmentActivity{
 
+    static TextView tv;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class CourseActivity extends FragmentActivity{
         Button back_button = (Button)findViewById(R.id.course_back);
         Button course_submit = (Button)findViewById(R.id.course_submit);
         LinearLayout course_buttons = (LinearLayout)findViewById(R.id.course_buttons_layout);
-        TextView tv = (TextView)findViewById(R.id.question_box);
+        tv = (TextView)findViewById(R.id.question_box);
 
         Intent intent = getIntent();
 
@@ -53,12 +55,17 @@ public class CourseActivity extends FragmentActivity{
 
         course_submit.setOnClickListener((view -> {
 
+            for (QuestionnaireInfo qr : QuestionnaireInfo.QRs)
+            {
+                Log.d("output", qr.questionnareRating +  " box: " + qr.questionnare_text_box_question);
+            }
+
+
         }));
 
         pager.setOnTouchListener(new View.OnTouchListener(){
             @Override
             public boolean onTouch(final View v, final MotionEvent event){
-
 
                 return mDetector.onTouchEvent(event);
             }

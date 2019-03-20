@@ -63,7 +63,7 @@
         android:id="@+id/question_box"
         android:layout_width="369dp"
         android:layout_height="87dp"
-        android:text="@string/question"
+        android:text="@string/question1"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"

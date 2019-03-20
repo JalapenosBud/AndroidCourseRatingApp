@@ -18,11 +18,12 @@ import java.util.ArrayList;
 public class FirstFragment extends Fragment{
 
     public static ArrayList<RadioButton> radioButtons = new ArrayList<>();
-
+    TextView tv;
     public static RadioGroup radioGroup;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -81,11 +82,15 @@ public class FirstFragment extends Fragment{
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                    View o = group.findViewById(checkedId);
 
+
+                    View o = group.findViewById(checkedId);
                     if(o instanceof RadioButton)
                     {
-                        Log.d("hi", ((RadioButton) o).getText().toString());
+                        Log.d("hi", ((RadioButton) o).getText().toString() + ", " + tv.getText().toString());
+                        QuestionnaireInfo.QRs.add(
+                                new QuestionnaireInfo(((RadioButton) o).getText().toString(),
+                                tv.getText().toString()));
                     }
                 }
             });
@@ -96,7 +101,7 @@ public class FirstFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_main, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.question_box);
+        tv = (TextView) v.findViewById(R.id.question_box);
         tv.setText(getArguments().getString("msg"));
 
         return v;
