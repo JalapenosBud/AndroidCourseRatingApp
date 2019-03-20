@@ -22,11 +22,6 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
-
     }
 
     @Override
@@ -96,9 +91,6 @@ public class FirstFragment extends Fragment {
                     {
                         Log.d("hi", ((RadioButton) o).getText().toString());
                     }
-
-
-
                 }
             });
         }
