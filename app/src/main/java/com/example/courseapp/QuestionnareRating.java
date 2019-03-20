@@ -6,12 +6,17 @@ public enum QuestionnareRating {
     C(80),
     D(70),
     E(60),
-    F(50);
+    F(50),
+    G("RESIGN");
 
     int rating;
-
+    String rate;
     QuestionnareRating(int rating)
     {
         this.rating = rating;
+    }
+    QuestionnareRating(String rate)
+    {
+        this.rate = rate;
     }
 }

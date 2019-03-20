@@ -12,58 +12,51 @@
         android:layout_height="379dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.446">
 
         <RadioButton
             android:id="@+id/radioButton10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_100" />
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_90" />
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/radioButton8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_80" />
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/radioButton9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_70" />
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/radioButton11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_60" />
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/radioButton12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/_50" />
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/radioButton13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/below_50" />
+            android:layout_weight="1" />
     </RadioGroup>
 
     <TextView

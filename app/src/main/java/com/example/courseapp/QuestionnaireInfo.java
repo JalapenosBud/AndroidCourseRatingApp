@@ -7,6 +7,8 @@ public class QuestionnaireInfo implements Parcelable {
 
     public String[] teacher_names = {"Faisal","Oskar", "David"};
 
+    public QuestionnareRating[] questionnareRatings = new QuestionnareRating[6];
+
 
     protected QuestionnaireInfo(Parcel in) {
         teacher_names = in.createStringArray();

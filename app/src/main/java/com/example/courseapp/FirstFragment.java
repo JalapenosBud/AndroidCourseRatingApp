@@ -22,6 +22,11 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
     }
 
     @Override
@@ -30,6 +35,51 @@ public class FirstFragment extends Fragment {
 
         radioGroup = getView().findViewById(R.id.radioGroup);
 
+        if(radioGroup != null) {
+            int count = radioGroup.getChildCount();
+
+            View b1 = radioGroup.getChildAt(0);
+            if(b1 instanceof RadioButton)
+            {
+                ((RadioButton) b1).setText("" + QuestionnareRating.A.rating);
+            }
+
+            View b2 = radioGroup.getChildAt(1);
+            if(b2 instanceof RadioButton)
+            {
+                ((RadioButton) b2).setText("" + QuestionnareRating.B.rating);
+            }
+
+            View b3 = radioGroup.getChildAt(2);
+            if(b3 instanceof RadioButton)
+            {
+                ((RadioButton) b3).setText("" + QuestionnareRating.C.rating);
+            }
+
+            View b4 = radioGroup.getChildAt(3);
+            if(b4 instanceof RadioButton)
+            {
+                ((RadioButton) b4).setText("" + QuestionnareRating.D.rating);
+            }
+
+            View b5 = radioGroup.getChildAt(4);
+            if(b5 instanceof RadioButton)
+            {
+                ((RadioButton) b5).setText("" + QuestionnareRating.E.rating);
+            }
+
+            View b6 = radioGroup.getChildAt(5);
+            if(b6 instanceof RadioButton)
+            {
+                ((RadioButton) b6).setText("" + QuestionnareRating.F.rating);
+            }
+
+            View b7 = radioGroup.getChildAt(6);
+            if(b7 instanceof RadioButton)
+            {
+                ((RadioButton) b7).setText("" + QuestionnareRating.G.rate);
+            }
+        }
 
 
         if(radioGroup != null)
@@ -39,16 +89,15 @@ public class FirstFragment extends Fragment {
 
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if(radioGroup != null) {
-                        int count = radioGroup.getChildCount();
 
-                            View o = radioGroup.getChildAt(checkedId);
-                            if(o instanceof RadioButton)
-                            {
-                                radioButtons.add((RadioButton)o);
-                            }
+                    View o = group.getChildAt(checkedId);
 
+                    if(o instanceof RadioButton)
+                    {
+                        Log.d("hi", ((RadioButton) o).getText().toString());
                     }
+
+
 
                 }
             });
