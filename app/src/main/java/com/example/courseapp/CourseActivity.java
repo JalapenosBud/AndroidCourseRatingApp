@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.example.courseapp.FirstFragment.radioGroup;
 
@@ -58,6 +59,17 @@ public class CourseActivity extends FragmentActivity{
             for (QuestionnaireInfo qr : QuestionnaireInfo.QRs)
             {
                 Log.d("output", qr.questionnareRating +  " box: " + qr.questionnare_text_box_question);
+            }
+
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("message/rfc822");
+            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"jalapenosbud@gmail.com"});
+            i.putExtra(Intent.EXTRA_SUBJECT, "subject of email");
+            i.putExtra(Intent.EXTRA_TEXT   , "body of email");
+            try {
+                startActivity(Intent.createChooser(i, "Send mail..."));
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(CourseActivity.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
             }
 
 
