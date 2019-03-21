@@ -22,6 +22,7 @@ import static com.example.courseapp.FirstFragment.radioGroup;
 public class CourseActivity extends FragmentActivity{
 
     static TextView tv;
+    public static String chosen_course = "";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -32,9 +33,13 @@ public class CourseActivity extends FragmentActivity{
 
         setContentView(R.layout.course_layout);
 
-
         ViewPager pager = (ViewPager) findViewById(R.id.container);
+
         Button android_button = (Button)findViewById(R.id.button_android);
+        Button quantom_button = (Button)findViewById(R.id.button_quantum);
+        Button relativity_button = (Button)findViewById(R.id.button_relativity);
+        Button math_button = (Button)findViewById(R.id.button_math);
+
         Button back_button = (Button)findViewById(R.id.course_back);
         Button course_submit = (Button)findViewById(R.id.course_submit);
         LinearLayout course_buttons = (LinearLayout)findViewById(R.id.course_buttons_layout);
@@ -43,6 +48,32 @@ public class CourseActivity extends FragmentActivity{
         Intent intent = getIntent();
 
         android_button.setOnClickListener((view -> {
+            chosen_course =  android_button.getText().toString();
+            Log.d("hi", chosen_course);
+            course_buttons.setVisibility(View.INVISIBLE);
+            tv.setText("");
+            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        }));
+
+        quantom_button.setOnClickListener((view -> {
+            chosen_course =  quantom_button.getText().toString();
+            Log.d("hi", chosen_course);
+            course_buttons.setVisibility(View.INVISIBLE);
+            tv.setText("");
+            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        }));
+
+        relativity_button.setOnClickListener((view -> {
+            chosen_course =  relativity_button.getText().toString();
+            Log.d("hi", chosen_course);
+            course_buttons.setVisibility(View.INVISIBLE);
+            tv.setText("");
+            pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        }));
+
+        math_button.setOnClickListener((view -> {
+            chosen_course =  math_button.getText().toString();
+            Log.d("hi", chosen_course);
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -71,9 +102,9 @@ public class CourseActivity extends FragmentActivity{
             for (QuestionnaireInfo qr : QuestionnaireInfo.QRs)
             {
                 emailsubject +=
-                        "\nfor teacher: " +  qr.teacher_names[0] +
-                                "\n, question: " + qr.questionnare_text_box_question +
-                                "\n, score: " + qr.questionnareRating;
+                        "<br> for teacher: " +  qr.teacher_names[0] +
+                                "<br>, question: " + qr.questionnare_text_box_question +
+                                "<br>, score: " + qr.questionnareRating;
             }
 
 
