@@ -83,6 +83,7 @@ public class CourseActivity extends FragmentActivity{
             course_buttons.setVisibility(View.VISIBLE);
             pager.setAdapter(null);
             tv.setText("Select a course to rate");
+
         }));
 
         course_submit.setOnClickListener((view -> {

@@ -24,16 +24,11 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.choose_a_teacher);
-
-       // Button submit_button = (Button)findViewById(R.id.submit_button);
-
 
         Button button_faisal = (Button) findViewById(R.id.button_faisal);
         Button button_oskar = (Button) findViewById(R.id.button_oskar);
         Button button_david= (Button) findViewById(R.id.button_david);
-
 
         RadioGroup radioGroup = null;
 
@@ -43,22 +38,25 @@ public class MainActivity extends FragmentActivity {
             teacher_buttons_layout.setEnabled(false);
             teacher_buttons_layout.setVisibility(View.INVISIBLE);
             teacher_name = button_faisal.getText().toString();
-
             Intent intent = new Intent(this, CourseActivity.class);
-
             startActivity(intent);
-
-            //setContentView(R.layout.course_layout);
-            //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
         }));
 
         button_oskar.setOnClickListener((view -> {
-            //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+            teacher_buttons_layout.setEnabled(false);
+            teacher_buttons_layout.setVisibility(View.INVISIBLE);
+            teacher_name = button_oskar.getText().toString();
+            Intent intent = new Intent(this, CourseActivity.class);
+            startActivity(intent);
         }));
 
         button_david.setOnClickListener((view -> {
-            //pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+            teacher_buttons_layout.setEnabled(false);
+            teacher_buttons_layout.setVisibility(View.INVISIBLE);
+            teacher_name = button_david.getText().toString();
+            Intent intent = new Intent(this, CourseActivity.class);
+            startActivity(intent);
         }));
 
     }

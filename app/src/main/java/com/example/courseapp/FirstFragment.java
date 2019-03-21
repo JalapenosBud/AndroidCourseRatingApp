@@ -33,6 +33,7 @@ public class FirstFragment extends Fragment{
         radioGroup = getView().findViewById(R.id.radioGroup);
 
         if(radioGroup != null) {
+
             int count = radioGroup.getChildCount();
 
             View b1 = radioGroup.getChildAt(0);
@@ -81,14 +82,13 @@ public class FirstFragment extends Fragment{
 
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
-
                     View o = group.findViewById(checkedId);
                     if(o instanceof RadioButton)
                     {
                         Log.d("hi", ((RadioButton) o).getText().toString() + ", " + tv.getText().toString());
                         QuestionnaireInfo.QRs.add(
                                 new QuestionnaireInfo(((RadioButton) o).getText().toString(),
-                                tv.getText().toString(),MainActivity.teacher_name));
+                                        tv.getText().toString(),MainActivity.teacher_name));
                     }
                 }
             });
@@ -98,6 +98,14 @@ public class FirstFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_main, container, false);
+        if(radioGroup != null)
+        {
+            radioGroup.clearCheck();
+            radioGroup.setSelected(false);
+
+          //  FirstFragment.radioGroup.clearCheck();
+           // QuestionnaireInfo.QRs.clear();
+        }
 
         tv = (TextView) v.findViewById(R.id.question_box);
         tv.setText(getArguments().getString("msg"));
