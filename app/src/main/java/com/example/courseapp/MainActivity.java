@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 public class MainActivity extends FragmentActivity {
 
 
+    public static String teacher_name = "";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -41,6 +42,7 @@ public class MainActivity extends FragmentActivity {
         button_faisal.setOnClickListener((view -> {
             teacher_buttons_layout.setEnabled(false);
             teacher_buttons_layout.setVisibility(View.INVISIBLE);
+            teacher_name = button_faisal.getText().toString();
 
             Intent intent = new Intent(this, CourseActivity.class);
 

@@ -11,18 +11,21 @@ public class QuestionnaireInfo implements Parcelable {
 
     public static ArrayList<QuestionnaireInfo> QRs = new ArrayList<>();
 
-    String questionnareRating;
+    public String questionnareRating;
 
-    String questionnare_text_box_question;
+    public String questionnare_text_box_question;
+
+    public String questionnareTeacher = "";
 
     protected QuestionnaireInfo(Parcel in) {
         teacher_names = in.createStringArray();
     }
 
-    public QuestionnaireInfo(String questionnareRating, String questionnare_text_box_question)
+    public QuestionnaireInfo(String questionnareRating, String questionnare_text_box_question, String qr_teacher)
     {
         this.questionnareRating = questionnareRating;
         this.questionnare_text_box_question = questionnare_text_box_question;
+        this.questionnareTeacher = qr_teacher;
     }
 
     public static final Creator<QuestionnaireInfo> CREATOR = new Creator<QuestionnaireInfo>() {

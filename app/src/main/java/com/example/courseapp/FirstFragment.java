@@ -82,15 +82,13 @@ public class FirstFragment extends Fragment{
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-
-
                     View o = group.findViewById(checkedId);
                     if(o instanceof RadioButton)
                     {
                         Log.d("hi", ((RadioButton) o).getText().toString() + ", " + tv.getText().toString());
                         QuestionnaireInfo.QRs.add(
                                 new QuestionnaireInfo(((RadioButton) o).getText().toString(),
-                                tv.getText().toString()));
+                                tv.getText().toString(),MainActivity.teacher_name));
                     }
                 }
             });

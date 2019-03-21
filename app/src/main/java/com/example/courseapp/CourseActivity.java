@@ -96,19 +96,22 @@ public class CourseActivity extends FragmentActivity{
             String frompassword = "";
             String toemail = "";
 
-            String emailsubject = "teacher rating";
+            String emailsubject =   "teacher rating for teacher: " + MainActivity.teacher_name +
+                                    "<br> for course: " + CourseActivity.chosen_course;
 
             String emailbody = "";
+
             for (QuestionnaireInfo qr : QuestionnaireInfo.QRs)
             {
                 emailsubject +=
-                        "<br> for teacher: " +  qr.teacher_names[0] +
-                                "<br>, question: " + qr.questionnare_text_box_question +
-                                "<br>, score: " + qr.questionnareRating;
+                                "<br> question: " + qr.questionnare_text_box_question +
+                                "<br> score: " + qr.questionnareRating;
             }
 
 
             new SendMailTask(CourseActivity.this).execute(fromEmail,frompassword,toemail,emailsubject,emailbody);
+
+            emailsubject = "";
 
         }));
 
