@@ -62,7 +62,7 @@ public class CourseActivity extends FragmentActivity{
             }
 
             String fromEmail = "mymailhehe11@gmail.com";
-            String frompassword = "113355aa";
+            String frompassword = "";
             String toemail = "ajphlp90@gmail.com";
 
             String emailsubject = "teacher rating";
