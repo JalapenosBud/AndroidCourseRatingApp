@@ -2,6 +2,7 @@ package com.example.courseapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Parcel;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -34,11 +35,19 @@ public class MainActivity extends FragmentActivity {
 
         LinearLayout teacher_buttons_layout = findViewById(R.id.teacher_buttons_layout);
 
+        TeacherInfo ti = new TeacherInfo();
+
         button_faisal.setOnClickListener((view -> {
             teacher_buttons_layout.setEnabled(false);
             teacher_buttons_layout.setVisibility(View.INVISIBLE);
             teacher_name = button_faisal.getText().toString();
+
+
             Intent intent = new Intent(this, CourseActivity.class);
+
+            ti.createTeacher(button_faisal.getText().toString());
+            intent.putExtra("teacher",ti);
+
             startActivity(intent);
 
         }));
@@ -47,7 +56,11 @@ public class MainActivity extends FragmentActivity {
             teacher_buttons_layout.setEnabled(false);
             teacher_buttons_layout.setVisibility(View.INVISIBLE);
             teacher_name = button_oskar.getText().toString();
+
             Intent intent = new Intent(this, CourseActivity.class);
+            ti.createTeacher(button_oskar.getText().toString());
+            intent.putExtra("teacher",ti);
+
             startActivity(intent);
         }));
 
@@ -55,7 +68,11 @@ public class MainActivity extends FragmentActivity {
             teacher_buttons_layout.setEnabled(false);
             teacher_buttons_layout.setVisibility(View.INVISIBLE);
             teacher_name = button_david.getText().toString();
+
             Intent intent = new Intent(this, CourseActivity.class);
+            ti.createTeacher(button_david.getText().toString());
+            intent.putExtra("teacher",ti);
+
             startActivity(intent);
         }));
 

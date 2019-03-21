@@ -41,15 +41,19 @@ public class CourseActivity extends FragmentActivity{
         Button math_button = (Button)findViewById(R.id.button_math);
 
         Button back_button = (Button)findViewById(R.id.course_back);
+        Button teacher_button = (Button)findViewById(R.id.button_teacher);
         Button course_submit = (Button)findViewById(R.id.course_submit);
         LinearLayout course_buttons = (LinearLayout)findViewById(R.id.course_buttons_layout);
         tv = (TextView)findViewById(R.id.question_box);
 
         Intent intent = getIntent();
 
+        TeacherInfo ti = intent.getExtras().getParcelable("teacher");
+
         android_button.setOnClickListener((view -> {
             chosen_course =  android_button.getText().toString();
             Log.d("hi", chosen_course);
+            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -58,6 +62,7 @@ public class CourseActivity extends FragmentActivity{
         quantom_button.setOnClickListener((view -> {
             chosen_course =  quantom_button.getText().toString();
             Log.d("hi", chosen_course);
+            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -66,6 +71,7 @@ public class CourseActivity extends FragmentActivity{
         relativity_button.setOnClickListener((view -> {
             chosen_course =  relativity_button.getText().toString();
             Log.d("hi", chosen_course);
+            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -74,6 +80,7 @@ public class CourseActivity extends FragmentActivity{
         math_button.setOnClickListener((view -> {
             chosen_course =  math_button.getText().toString();
             Log.d("hi", chosen_course);
+            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -86,6 +93,11 @@ public class CourseActivity extends FragmentActivity{
 
         }));
 
+        teacher_button.setOnClickListener((view -> {
+            Intent gotomain = new Intent(this, MainActivity.class);
+            startActivity(gotomain);
+        }));
+
         course_submit.setOnClickListener((view -> {
 
             for (QuestionnaireInfo qr : QuestionnaireInfo.QRs)
@@ -93,11 +105,14 @@ public class CourseActivity extends FragmentActivity{
                 Log.d("output", qr.questionnareRating +  " box: " + qr.questionnare_text_box_question);
             }
 
+            //senders email here:
             String fromEmail = "mymailhehe11@gmail.com";
+            //senders mail account password here:
             String frompassword = "";
+            //receivers email here:
             String toemail = "";
 
-            String emailsubject =   "teacher rating for teacher: " + MainActivity.teacher_name +
+            String emailsubject =   "teacher rating for teacher: " + ti.toString() +
                                     "<br> for course: " + CourseActivity.chosen_course;
 
             String emailbody = "";
