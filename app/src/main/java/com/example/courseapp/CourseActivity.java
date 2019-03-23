@@ -52,8 +52,6 @@ public class CourseActivity extends FragmentActivity{
 
         android_button.setOnClickListener((view -> {
             chosen_course =  android_button.getText().toString();
-            Log.d("hi", chosen_course);
-            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -61,8 +59,6 @@ public class CourseActivity extends FragmentActivity{
 
         quantom_button.setOnClickListener((view -> {
             chosen_course =  quantom_button.getText().toString();
-            Log.d("hi", chosen_course);
-            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -70,8 +66,6 @@ public class CourseActivity extends FragmentActivity{
 
         relativity_button.setOnClickListener((view -> {
             chosen_course =  relativity_button.getText().toString();
-            Log.d("hi", chosen_course);
-            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -79,8 +73,6 @@ public class CourseActivity extends FragmentActivity{
 
         math_button.setOnClickListener((view -> {
             chosen_course =  math_button.getText().toString();
-            Log.d("hi", chosen_course);
-            Log.d("hi", ti.toString());
             course_buttons.setVisibility(View.INVISIBLE);
             tv.setText("");
             pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
@@ -99,11 +91,6 @@ public class CourseActivity extends FragmentActivity{
         }));
 
         course_submit.setOnClickListener((view -> {
-
-            for (QuestionnaireInfo qr : QuestionnaireInfo.QRs)
-            {
-                Log.d("output", qr.questionnareRating +  " box: " + qr.questionnare_text_box_question);
-            }
 
             //senders email here:
             String fromEmail = "mymailhehe11@gmail.com";

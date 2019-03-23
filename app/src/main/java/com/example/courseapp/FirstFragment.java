@@ -85,7 +85,6 @@ public class FirstFragment extends Fragment{
                     View o = group.findViewById(checkedId);
                     if(o instanceof RadioButton)
                     {
-                        Log.d("hi", ((RadioButton) o).getText().toString() + ", " + tv.getText().toString());
                         QuestionnaireInfo.QRs.add(
                                 new QuestionnaireInfo(((RadioButton) o).getText().toString(),
                                         tv.getText().toString(),MainActivity.teacher_name));
@@ -102,9 +101,6 @@ public class FirstFragment extends Fragment{
         {
             radioGroup.clearCheck();
             radioGroup.setSelected(false);
-
-          //  FirstFragment.radioGroup.clearCheck();
-           // QuestionnaireInfo.QRs.clear();
         }
 
         tv = (TextView) v.findViewById(R.id.question_box);
